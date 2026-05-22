@@ -1,0 +1,128 @@
+/* 全体の背景 */
+body {
+    background: #ffdcfa;
+    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* タイトルエリア */
+.title {
+    text-align: center;
+    padding: 40px 0;
+}
+
+.title h1 {
+    color: #d63384;
+}
+
+.title h2 {
+    color: #666;
+}
+
+/* --- 横並びレイアウトの要 --- */
+.game-flex-container {
+    display: flex;            /* 横並びにする */
+    justify-content: center;  /* 中央に寄せる */
+    align-items: flex-start;  /* 上側で高さを揃える */
+    gap: 30px;               /* 左と右の間の広さ */
+    margin: 20px auto;
+    padding: 0 20px;
+    max-width: 1000px;        /* PCで見やすい幅 */
+}
+
+/* 左側：操作ボタンエリア */
+.controls-side {
+    flex: 1;                 /* 幅を柔軟に */
+    text-align: center;
+    padding: 20px;
+    background-color: #fffaf0; /* 優しいクリーム色 */
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+/* 右側：結果表示エリア */
+.result-side {
+    flex: 1;                 /* 幅を柔軟に */
+    min-width: 350px;
+}
+
+/* 結果表示の箱（点線の枠） */
+.result-area {
+    padding: 20px;
+    background-color: #ffffff;
+    border: 2px dashed #ffaa00;
+    border-radius: 15px;
+    text-align: center;
+    min-height: 400px;       /* 判定が出てもガタガタ動かないように高さを確保 */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+/* じゃんけんボタンの装飾 */
+.buttons button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin: 10px;
+    transition: transform 0.2s;
+}
+
+.buttons button img {
+    width: 100px;
+    height: auto;
+    border-radius: 50%;
+}
+
+/* ボタンの動き演出 */
+.buttons button:hover {
+    transform: scale(1.1);
+}
+
+.buttons button:active {
+    transform: translateY(4px);
+}
+
+/* 判定結果の画像（win/draw/loose） */
+.result-image {
+    margin-bottom: 15px;
+    min-height: 200px; /* 画像エリアの高さを確保 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#result-pic {
+    border-radius: 10px;
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* あなたの手・飴屋さんの手の表示 */
+.hands-display {
+    margin: 20px 0;
+    font-weight: bold;
+}
+
+.hands-display img {
+    border: 2px solid #ffdcfa;
+    border-radius: 10px;
+    margin-left: 10px;
+}
+
+/* アニメーション：ふわっと出る */
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* スマホで見るときは縦並びにする設定 */
+@media (max-width: 768px) {
+    .game-flex-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .result-side {
+        width: 100%;
+        min-width: unset;
+    }
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja"> <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>飴屋さん販促ツール「じゃんけんアプリ」</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<section class="title">
+    <h1 style="text-align:center" class="a">飴屋さんとじゃんけんしよう</h1>
+    <h2 style="text-align:center" class="b">🍓🍓🍓勝てば飴がたくさんもらえるよ🍓🍓🍓</h2>
+</section>
+
+<section class="game-section">
+    <div class="game-flex-container">
+        
+        <div class="controls-side">
+            <p class="instruction">自分の出す手を選んでね！</p>
+            <div class="buttons">
+                <button onclick="rsp(0)"><img src="img/guu.png" alt="グー"></button>
+                <button onclick="rsp(1)"><img src="img/choki.png" alt="チョキ"></button>
+                <button onclick="rsp(2)"><img src="img/pa.png" alt="パー"></button>
+            </div>
+        </div>
+
+        <div class="result-side">
+            <div class="result-area">
+                <div class="result-image">
+                    <img id="result-pic" src="" alt="" style="display:none; width:200px; height:auto;">
+                </div>
+                <div class="hands-display">
+                    <p>あなたの手：<img id="player-hand-img" src="" alt="" style="width:60px; vertical-align:middle; display:none;"></p>
+                    <p>飴屋さんの手：<img id="pc-hand-img" src="" alt="" style="width:60px; vertical-align:middle; display:none;"></p>
+                </div>
+                <h2 id="judgment">結果は...？</h2>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+    <script src="js/test.js"></script>
+    
+</body>
+</html>
